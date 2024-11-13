@@ -11,6 +11,7 @@
     font-size: 40px;
     font-style: unset;
     font-weight: 100%;
+    box-shadow:2px 2px gray 5px blue inset;
 }
 ul {
   list-style: none;
@@ -22,4 +23,25 @@ li{
     margin: 20px;
     font-size: 25px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.word{
+  margin-top: 200px;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.image{
+  border:1px solid rgb(23, 26, 27);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 200px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: clip;
+}
+img{
+  height: 400px;
+  width: 400px;
+  border: 8px solid white;
 }
