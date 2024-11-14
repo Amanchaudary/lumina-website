@@ -45,3 +45,21 @@ img{
   width: 400px;
   border: 8px solid white;
 }
+.foo{
+margin: 60px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.lumi{
+  font-size: 40px;
+  font-style: unset;
+  font-weight: 100%;
+  box-shadow:2px 2px gray 5px blue inset;
+}
+.contact{
+  font-size: 20px;
+}
+.last-part{
+  font-size: 20px;
+}
