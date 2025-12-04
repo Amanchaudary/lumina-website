@@ -3,56 +3,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lumini website</title>
-    <link rel="stylesheet" href="Style.css" />
+    <title>LUMINA - Responsive Website</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #fafafa;
+        color: #222;
+      }
+
+      /* HEADER */
+      header {
+        width: 100%;
+        background: #111;
+        color: white;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .navbar ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+      }
+
+      .navbar li {
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .navbar li:hover {
+        color: #f8d53a;
+      }
+
+      /* MOBILE MENU */
+      @media (max-width: 768px) {
+        .navbar ul {
+          flex-direction: column;
+          background: #222;
+          padding: 10px;
+          border-radius: 6px;
+          display: none;
+        }
+
+        .navbar.active ul {
+          display: block;
+        }
+
+        .menu-btn {
+          display: block;
+          font-size: 22px;
+          cursor: pointer;
+          padding: 8px;
+        }
+      }
+
+      .menu-btn {
+        display: none;
+      }
+
+      /* MAIN SECTIONS */
+      section {
+        padding: 70px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* HOME SECTION */
+      #home .hero-text {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        line-height: 1.4;
+      }
+
+      /* GALLERY */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+
+      /* ABOUT SECTION */
+      #about .about-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      #about img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      #about p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        #about .about-box {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* CONTACT FORM */
+      #contact form {
+        max-width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      button {
+        background: #111;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #333;
+      }
+
+      /* FOOTER */
+      footer {
+        margin-top: 40px;
+        background: #111;
+        color: white;
+        padding: 25px 20px;
+        text-align: center;
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <div class="container">
-        <p class="aman">LUMINA</p>
-        <div class="navbar">
+        <p class="logo">LUMINA</p>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <div class="navbar" id="nav">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li onclick="scrollToSection('home')">Home</li>
+            <li onclick="scrollToSection('about')">About</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
           </ul>
         </div>
       </div>
     </header>
-    <main>
-      <p class="word">
-        Passionate Creatives Creafting Distinct <br />
-        projects, Driven by innovation
+
+    <!-- HOME SECTION -->
+    <section id="home">
+      <p class="hero-text">
+        Passionate Creatives Crafting Distinct <br />
+        Projects, Driven by Innovation.
       </p>
-      <div class="image">
-        <img src="image1.jpg" alt="img1" />
-        <img src="image2.jpg" alt="img2" />
-        <img src="image3.jpg" alt="img3" />
-        <br>
-        <img src="image4.jpg" alt="img4" />
-        <img src="image5.jpg" alt="img5" />
-        <img src="image5.jpg" alt="img6" />
-        <img src="image7.jpg" alt="img7" />
-        <img src="image8.jpg" alt="img8" />
-        <img src="image9.jpg" alt="img9" />
+
+      <div class="gallery">
+        <img src="image1.jpg" />
+        <img src="image2.jpg" />
+        <img src="image3.jpg" />
+        <img src="image4.jpg" />
+        <img src="image5.jpg" />
+        <img src="image6.jpg" />
+        <img src="image7.jpg" />
+        <img src="image8.jpg" />
+        <img src="image9.jpg" />
       </div>
-    </main>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2>About Us</h2>
+
+      <div class="about-box">
+        <img src="image1.jpg" alt="About Image" />
+
+        <p>
+          At LUMINA, we are passionate creators driven by innovation.  
+          Our mission is to design powerful and meaningful visual experiences  
+          that leave a lasting impact.  
+          <br /><br />
+          We combine creativity, technical excellence, and strategic thinking  
+          to deliver projects that truly stand out.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
     <footer>
-      <div class="foo">
-        <div class="lumi">LUMINA</div>
-        <div class="contact">
-          <p style="font-style: italic;"> Contact Us</p>
-          <p>(555)555-5555</p>
-          <p>contact@lumina.test</p>
-          <p>10 Main St.Bosten Ma</p>
-        </div>
-        <div class="last-part">
-          <p>Follow us</p>
-          <div class="logo">
-            
-          </div>
-        </div>
-      </div>
+      <p>© 2025 LUMINA. All Rights Reserved.</p>
     </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("nav").classList.toggle("active");
+      }
+
+      function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        document.getElementById("nav").classList.remove("active");
+      }
+    </script>
   </body>
 </html>
